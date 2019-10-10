@@ -8,7 +8,7 @@ use yii\helpers\Html;
 use yii\helpers\Json;
 use yii\web\JsExpression;
 use yii\widgets\InputWidget;
-use bmix8872\Flatpickr\assets\FlatpickrAsset;
+use mix8872\Flatpickr\assets\FlatpickrAsset;
 
 class FlatpickrWidget extends InputWidget
 {
