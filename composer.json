@@ -22,7 +22,7 @@
     },
     "require": {
         "yiisoft/yii2": "*",
-        "bower-asset/flatpickr": "^4.6.3"
+        "npm-asset/flatpickr": "^4.6.3"
     },
     "autoload": {
         "psr-4": {
