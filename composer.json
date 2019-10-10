@@ -26,7 +26,7 @@
     },
     "autoload": {
         "psr-4": {
-            "bs\\Flatpickr\\": "src"
+            "mix8872\\Flatpickr\\": "src"
         }
     }
 }
