@@ -1,6 +1,6 @@
 <?php
 
-namespace bs\Flatpickr;
+namespace mix8872\Flatpickr;
 
 use Yii;
 use yii\helpers\ArrayHelper;
@@ -8,7 +8,7 @@ use yii\helpers\Html;
 use yii\helpers\Json;
 use yii\web\JsExpression;
 use yii\widgets\InputWidget;
-use bs\Flatpickr\assets\FlatpickrAsset;
+use bmix8872\Flatpickr\assets\FlatpickrAsset;
 
 class FlatpickrWidget extends InputWidget
 {

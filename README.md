@@ -1,4 +1,4 @@
-# Yii2 Flatpickr
+# Yii2 Flatpickr (fork of Beaten-Sect0r/yii2-flatpickr)
 
 Click on a :star:!
 
