@@ -8,7 +8,7 @@ use yii\web\AssetBundle;
 
 class FlatpickrAsset extends AssetBundle
 {
-    public $sourcePath = '@npm/flatpickr/dist';
+    public $sourcePath = '@npm-asset/flatpickr/dist';
     public $locale;
     public $plugins = [];
     public $theme;
