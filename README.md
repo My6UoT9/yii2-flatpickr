@@ -1,14 +1,12 @@
-# Yii2 Flatpickr (fork of Beaten-Sect0r/yii2-flatpickr)
+# Yii2 Flatpickr (fork of mix8872/yii2-flatpickr)
 
 Click on a :star:!
 
-[![Total Downloads](https://poser.pugx.org/beaten-sect0r/yii2-flatpickr/downloads?format=flat-square)](https://packagist.org/packages/beaten-sect0r/yii2-flatpickr)
-[![Latest Stable Version](https://poser.pugx.org/beaten-sect0r/yii2-flatpickr/v/stable?format=flat-square)](https://packagist.org/packages/beaten-sect0r/yii2-flatpickr)
-[![Latest Unstable Version](https://poser.pugx.org/beaten-sect0r/yii2-flatpickr/v/unstable?format=flat-square)](https://packagist.org/packages/beaten-sect0r/yii2-flatpickr)
-[![License](https://poser.pugx.org/beaten-sect0r/yii2-flatpickr/license?format=flat-square)](https://packagist.org/packages/beaten-sect0r/yii2-flatpickr)
-
 [Flatpickr](https://chmln.github.io/flatpickr/) is a lightweight and powerful datetime picker.
-
+## Changes from mix8872/yii2-flatpickr
+- Dropped asset-packagist, only use npm
+- Replaced glyphicons with fontawesome
+ 
 ## Installation
 
 The preferred way to install this extension is through [composer](http://getcomposer.org/download/).
@@ -16,13 +14,13 @@ The preferred way to install this extension is through [composer](http://getcomp
 Either run
 
 ```bash
-composer require --prefer-dist beaten-sect0r/yii2-flatpickr "*"
+composer require --prefer-dist my6uot9/yii2-flatpickr "*"
 ```
 
 or add
 
 ```
-"beaten-sect0r/yii2-flatpickr": "*"
+"my6uot9/yii2-flatpickr": "*"
 ```
 
 to the require section of your `composer.json` file.
@@ -32,7 +30,7 @@ to the require section of your `composer.json` file.
 ```php
 <?php
 
-use bs\Flatpickr\FlatpickrWidget;
+use my6uot9\Flatpickr\FlatpickrWidget;
 
 ?>
 

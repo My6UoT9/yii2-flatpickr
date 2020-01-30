@@ -1,14 +1,13 @@
 <?php
 
-namespace mix8872\Flatpickr;
+namespace my6uot9\Flatpickr;
 
-use Yii;
 use yii\helpers\ArrayHelper;
 use yii\helpers\Html;
 use yii\helpers\Json;
 use yii\web\JsExpression;
 use yii\widgets\InputWidget;
-use mix8872\Flatpickr\assets\FlatpickrAsset;
+use my6uot9\Flatpickr\assets\FlatpickrAsset;
 
 class FlatpickrWidget extends InputWidget
 {
@@ -64,11 +63,11 @@ class FlatpickrWidget extends InputWidget
     public $groupBtn = [
         'toggle' => [
             'btnClass' => 'btn btn-default',
-            'iconClass' => 'glyphicon glyphicon-calendar',
+            'iconClass' => 'fas fa-calendar',
         ],
         'clear' => [
             'btnClass' => 'btn btn-default',
-            'iconClass' => 'glyphicon glyphicon-remove',
+            'iconClass' => 'fas fa-calendar-times',
         ],
     ];
 

@@ -1,5 +1,5 @@
 {
-    "name": "mix8872/yii2-flatpickr",
+    "name": "my6uot9/yii2-flatpickr",
     "description": "Datetime picker widget for Yii2 framework",
     "keywords": ["yii2", "extension", "datetime picker", "flatpickr"],
     "authors": [
@@ -14,19 +14,26 @@
             "role": "Developer"
         }
     ],
+    "minimum-stability": "dev",
+    "prefer-stable": true,
     "type": "yii2-extension",
     "license": "BSD-3-Clause",
     "support": {
-        "issues": "https://github.com/Beaten-Sect0r/yii2-flatpickr/issues?state=open",
-        "source": "https://github.com/Beaten-Sect0r/yii2-flatpickr"
+        "issues": "https://github.com/My6UoT9/yii2-flatpickr/issues?state=open",
+        "source": "https://github.com/My6UoT9/yii2-flatpickr"
     },
     "require": {
-        "yiisoft/yii2": "*",
-        "npm-asset/flatpickr": "^4.6.3"
+        "yiisoft/yii2": "~2.0.14"
     },
     "autoload": {
         "psr-4": {
-            "mix8872\\Flatpickr\\": "src"
+            "my6uot9\\Flatpickr\\": "src"
         }
+    },
+    "replace": {
+        "bower-asset/jquery": "*",
+        "bower-asset/inputmask": "*",
+        "bower-asset/punycode": "*",
+        "bower-asset/yii2-pjax": "*"
     }
 }

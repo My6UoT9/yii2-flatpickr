@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "flatpickr": "^4.6.3"
+  },
+  "devDependencies": {}
+}

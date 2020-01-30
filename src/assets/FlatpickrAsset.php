@@ -1,8 +1,7 @@
 <?php
 
-namespace mix8872\Flatpickr\assets;
+namespace my6uot9\Flatpickr\assets;
 
-use Yii;
 use yii\helpers\ArrayHelper;
 use yii\web\AssetBundle;
 
