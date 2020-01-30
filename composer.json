@@ -29,11 +29,5 @@
         "psr-4": {
             "my6uot9\\Flatpickr\\": "src"
         }
-    },
-    "replace": {
-        "bower-asset/jquery": "*",
-        "bower-asset/inputmask": "*",
-        "bower-asset/punycode": "*",
-        "bower-asset/yii2-pjax": "*"
     }
 }

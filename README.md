@@ -5,6 +5,18 @@ Click on a :star:!
 [Flatpickr](https://chmln.github.io/flatpickr/) is a lightweight and powerful datetime picker.
 ## Changes from mix8872/yii2-flatpickr
 - Dropped asset-packagist, only use npm
+    To be able to use `composer install` in this standalone yii2-flatpickr, add to composer.json:
+    ```
+    
+        "replace": {
+            "bower-asset/jquery": "*",
+            "bower-asset/inputmask": "*",
+            "bower-asset/punycode": "*",
+            "bower-asset/yii2-pjax": "*"
+        }
+    ```
+    That tells composer, that those packages are already provided. Thus effectively preventing them from installing.
+
 - Replaced glyphicons with fontawesome
  
 ## Installation
