@@ -1,13 +1,13 @@
 <?php
 
-namespace my6uot9\Flatpickr;
+namespace my6uot9\flatpickr;
 
 use yii\helpers\ArrayHelper;
 use yii\helpers\Html;
 use yii\helpers\Json;
 use yii\web\JsExpression;
 use yii\widgets\InputWidget;
-use my6uot9\Flatpickr\assets\FlatpickrAsset;
+use my6uot9\flatpickr\assets\FlatpickrAsset;
 
 class FlatpickrWidget extends InputWidget
 {
@@ -41,19 +41,17 @@ class FlatpickrWidget extends InputWidget
      */
     public $disabled = false;
 
-    /**
-     * Show group buttons
-     *
+     /**
+     * Show clear button
      * @var bool
      */
-    public $groupBtnShow = false;
+    public $clear = true;
 
     /**
-     * Buttons template
-     *
-     * @var string
+     * Show toggle button
+     * @var bool
      */
-    public $groupBtnTemplate = '{toggle} {clear}';
+    public $toggle = false;
 
     /**
      * Buttons
@@ -62,11 +60,11 @@ class FlatpickrWidget extends InputWidget
      */
     public $groupBtn = [
         'toggle' => [
-            'btnClass' => 'btn btn-default',
+            'btnClass' => 'btn btn-outline-secondary',
             'iconClass' => 'fas fa-calendar',
         ],
         'clear' => [
-            'btnClass' => 'btn btn-default',
+            'btnClass' => 'btn btn-outline-secondary',
             'iconClass' => 'fas fa-calendar-times',
         ],
     ];
@@ -89,7 +87,7 @@ class FlatpickrWidget extends InputWidget
             $options['disabled'] = 'disabled';
         }
 
-        if ($this->groupBtnShow) {
+        if ($this->toggle || $this->clear) {
             $content .= '<div class="flatpickr-' . $this->options['id'] . ' input-group">';
 
             if ($this->hasModel()) {
@@ -98,12 +96,14 @@ class FlatpickrWidget extends InputWidget
                 $content .= Html::textInput($this->name, $this->value, ArrayHelper::merge($this->options, $options));
             }
 
-            $content .= '<div class="input-group-btn">';
-            if (preg_match_all('/{(toggle|clear)}/i', $this->groupBtnTemplate, $matches)) {
-                foreach ($matches[1] as $btnName) {
-                    $content .= $this->renderGroupBtn($btnName);
-                }
+            $content .= '<div class="input-group-append">';
+            if ($this->toggle) {
+                $content .= $this->renderGroupBtn('toggle');
             }
+            if ($this->clear) {
+                $content .= $this->renderGroupBtn('clear');
+            }
+
             $content .= '</div>';
             $content .= '</div>';
         } else {
@@ -125,6 +125,7 @@ class FlatpickrWidget extends InputWidget
         $this->clientOptions['locale'] = $this->locale;
 
         if (!empty($this->plugins) && is_array($this->plugins)) {
+            $plugins = [];
             if (ArrayHelper::keyExists('rangePlugin', $this->plugins)) {
                 $options = Json::encode($this->plugins['rangePlugin']);
                 $plugins[] = "rangePlugin($options)";
@@ -151,7 +152,7 @@ class FlatpickrWidget extends InputWidget
         $asset->plugins = $this->plugins;
         $asset->theme = $this->theme;
 
-        if ($this->groupBtnShow) {
+        if ($this->toggle || $this->clear) {
             $selector = Json::encode('.flatpickr-' . $this->options['id']);
         } else {
             $selector = Json::encode('#' . $this->options['id']);

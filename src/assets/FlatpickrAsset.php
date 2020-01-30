@@ -1,6 +1,6 @@
 <?php
 
-namespace my6uot9\Flatpickr\assets;
+namespace my6uot9\flatpickr\assets;
 
 use yii\helpers\ArrayHelper;
 use yii\web\AssetBundle;

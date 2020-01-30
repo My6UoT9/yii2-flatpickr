@@ -12,6 +12,10 @@
             "name": "Mix8872",
             "email": "mix8872@gmail.com",
             "role": "Developer"
+        },
+        {
+            "name": "my6uot9",
+            "role": "Developer"
         }
     ],
     "minimum-stability": "dev",
@@ -27,7 +31,7 @@
     },
     "autoload": {
         "psr-4": {
-            "my6uot9\\Flatpickr\\": "src"
+            "my6uot9\\flatpickr\\": "src"
         }
     }
 }
