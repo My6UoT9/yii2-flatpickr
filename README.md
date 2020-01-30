@@ -1,8 +1,11 @@
 # Yii2 Flatpickr (fork of mix8872/yii2-flatpickr)
 
-Click on a :star:!
+[![Packagist](https://img.shields.io/packagist/v/my6uot9/yii2-flatpickr)](https://packagist.org/packages/my6uot9/yii2-flatpickr)
+[![Packagist](https://img.shields.io/packagist/l/my6uot9/yii2-flatpickr)](https://packagist.org/packages/my6uot9/yii2-flatpickr)
+[![Packagist](https://img.shields.io/packagist/dt/my6uot9/yii2-flatpickr)](https://packagist.org/packages/my6uot9/yii2-flatpickr)
 
 [Flatpickr](https://chmln.github.io/flatpickr/) is a lightweight and powerful datetime picker.
+
 ## Changes from mix8872/yii2-flatpickr
 - Dropped asset-packagist, only use npm
     To be able to use `composer install` in this standalone yii2-flatpickr, add to composer.json:
@@ -78,7 +81,7 @@ use my6uot9\Flatpickr\FlatpickrWidget;
     'locale' => 'fr', //default is strtolower(substr(Yii::$app->language, 0, 2))
     // 
     'clear' => false, // renders reset button, default is true
-    'toggle' => true, // redners button to open calendar, default is false
+    'toggle' => true, // renders button to open calendar, default is false
     'clientOptions' => [
         // config options https://chmln.github.io/flatpickr/options/
         'allowInput' => false, //default is true
