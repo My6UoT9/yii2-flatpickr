@@ -51,7 +51,19 @@ or add
 to the dependencies section of your `package.json` file.
 
 ## Usage
-
+By default the confirmDate plugin is active and configured like this: 
+```
+    'plugins' => [
+         'confirmDate' => [
+               'confirmIcon'=> "<i class='fa fa-check'></i>",
+               'confirmText' => 'OK',
+               'showAlways' => false,
+               'theme' => 'light',
+         ],
+    ],
+```
+The locale is automatically set to  `Yii::$app->getLocale()->datepicker`.   
+It can be overwritten by setting `locale` directly.
 ```php
 <?php
 
@@ -62,24 +74,17 @@ use my6uot9\Flatpickr\FlatpickrWidget;
 <?= $form->field($model, 'published_at')->widget(FlatpickrWidget::class, [
     'locale' => strtolower(substr(Yii::$app->language, 0, 2)),
     // https://chmln.github.io/flatpickr/plugins/
-    'plugins' => [
-         'confirmDate' => [
-               'confirmIcon'=> "<i class='fa fa-check'></i>",
-               'confirmText' => 'OK',
-               'showAlways' => false,
-               'theme' => 'light',
-         ],
-    ],
-    'groupBtnShow' => true,
-    'options' => [
-        'class' => 'form-control',
-    ],
+    'clear' => false, // renders reset button, default is true
+    'toggle' => true, // redners button to open calendar, default is false
     'clientOptions' => [
         // config options https://chmln.github.io/flatpickr/options/
-        'allowInput' => true,
+        'allowInput' => false, //default is true
         'defaultDate' => $model->published_at ? date(DATE_ATOM, $model->published_at) : null,
-        'enableTime' => true,
-        'time_24hr' => true,
+        'enableTime' => true, //default is false      
     ],
 ]) ?>
 ```
+
+### Options
+
+Only one theme can be used at a time.

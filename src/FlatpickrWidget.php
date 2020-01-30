@@ -2,6 +2,7 @@
 
 namespace my6uot9\flatpickr;
 
+use Yii;
 use yii\helpers\ArrayHelper;
 use yii\helpers\Html;
 use yii\helpers\Json;
@@ -25,15 +26,15 @@ class FlatpickrWidget extends InputWidget
     public $locale;
 
     /**
-     * @var array
+     * @var null|array
      */
-    public $plugins = [];
+    public $plugins = null;
 
     /**
      * @var string
      */
     public $theme;
-    
+
     /**
      * Disable input
      *
@@ -64,7 +65,7 @@ class FlatpickrWidget extends InputWidget
             'iconClass' => 'fas fa-calendar',
         ],
         'clear' => [
-            'btnClass' => 'btn btn-outline-secondary',
+            'btnClass' => 'btn btn-outline-danger',
             'iconClass' => 'fas fa-calendar-times',
         ],
     ];
@@ -74,10 +75,15 @@ class FlatpickrWidget extends InputWidget
      */
     public function run()
     {
-        if (!empty($this->groupBtnShow)) {
+        if ($this->toggle || $this->clear) {
             $this->clientOptions['wrap'] = true;
         } else {
             $this->clientOptions['wrap'] = false;
+        }
+
+        if ($this->locale === null) {
+            $locale = Yii::$app->getLocale();
+            $this->locale = $locale->datepicker;
         }
 
         $this->registerClientScript();
@@ -124,6 +130,19 @@ class FlatpickrWidget extends InputWidget
     {
         $this->clientOptions['locale'] = $this->locale;
 
+        if (null === $this->plugins) {
+            $this->plugins = [
+                'confirmDate' => [
+                    'confirmIcon'=> "<i class='fas fa-check'></i>",
+                    'confirmText' => '',
+                    'showAlways' => true,
+                    'theme' =>  $this->theme,
+                ]
+            ];
+        }
+        if (!isset($this->clientOptions['allowInput'])){
+            $this->clientOptions['allowInput'] = true;
+        }
         if (!empty($this->plugins) && is_array($this->plugins)) {
             $plugins = [];
             if (ArrayHelper::keyExists('rangePlugin', $this->plugins)) {
