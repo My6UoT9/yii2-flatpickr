@@ -26,13 +26,13 @@ The preferred way to install this extension is through [composer](http://getcomp
 Either run
 
 ```bash
-composer require --prefer-dist my6uot9/yii2-flatpickr "*"
+composer require --prefer-dist my6uot9/yii2-flatpickr "^3.0.0"
 ```
 
 or add
 
 ```
-"my6uot9/yii2-flatpickr": "*"
+"my6uot9/yii2-flatpickr": "^3.0.0"
 ```
 
 to the require section of your `composer.json` file.
