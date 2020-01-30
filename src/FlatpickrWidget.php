@@ -82,8 +82,7 @@ class FlatpickrWidget extends InputWidget
         }
 
         if ($this->locale === null) {
-            $locale = Yii::$app->getLocale();
-            $this->locale = $locale->datepicker;
+            $this->locale = strtolower(substr(Yii::$app->language, 0, 2));
         }
 
         $this->registerClientScript();

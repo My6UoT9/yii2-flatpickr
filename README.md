@@ -62,7 +62,7 @@ By default the confirmDate plugin is active and configured like this:
          ],
     ],
 ```
-The locale is automatically set to  `Yii::$app->getLocale()->datepicker`.   
+The locale is automatically set to  `strtolower(substr(Yii::$app->language, 0, 2));`.   
 It can be overwritten by setting `locale` directly.
 ```php
 <?php
