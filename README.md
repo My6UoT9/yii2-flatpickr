@@ -87,6 +87,3 @@ use my6uot9\Flatpickr\FlatpickrWidget;
     ],
 ]) ?>
 ```
-
-### Options
-
