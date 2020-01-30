@@ -62,8 +62,11 @@ By default the confirmDate plugin is active and configured like this:
          ],
     ],
 ```
-The locale is automatically set to  `strtolower(substr(Yii::$app->language, 0, 2));`.   
-It can be overwritten by setting `locale` directly.
+Visit https://chmln.github.io/flatpickr/plugins/ for more plugins and config infos.  
+- The locale is automatically set to  `strtolower(substr(Yii::$app->language, 0, 2));`.   
+  It can be overwritten by setting `locale` directly.
+- Only one theme can be used at a time,
+
 ```php
 <?php
 
@@ -72,8 +75,8 @@ use my6uot9\Flatpickr\FlatpickrWidget;
 ?>
 
 <?= $form->field($model, 'published_at')->widget(FlatpickrWidget::class, [
-    'locale' => strtolower(substr(Yii::$app->language, 0, 2)),
-    // https://chmln.github.io/flatpickr/plugins/
+    'locale' => 'fr', //default is strtolower(substr(Yii::$app->language, 0, 2))
+    // 
     'clear' => false, // renders reset button, default is true
     'toggle' => true, // redners button to open calendar, default is false
     'clientOptions' => [
@@ -87,4 +90,3 @@ use my6uot9\Flatpickr\FlatpickrWidget;
 
 ### Options
 
-Only one theme can be used at a time.
