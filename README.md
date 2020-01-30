@@ -37,6 +37,19 @@ or add
 
 to the require section of your `composer.json` file.
 
+## Installation of Assets
+
+The preferred way to install the required assets is through [nodejs](https://nodejs.org/).
+```bash
+npm install flatpickr@^4.6.3
+```
+
+or add 
+```
+ "flatpickr": "^4.6.3"
+```
+to the dependencies section of your `package.json` file.
+
 ## Usage
 
 ```php
